@@ -16,21 +16,71 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+}
+.search-img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 80px;
 }
 .logo {
   display: block;
+  margin-right: 22px;
 }
 
 /* ------- homePage ------- */
 
 .home-page {
-  margin: 0 auto;   
+  margin: 0 auto;
+  padding-top: 269px;
+  max-width: 1366px; /* TODO: DRY*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-page__icon {
+  width: 110px;
+  height: 110px;
+}
+.home-page__text {
+  margin-top: 24px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
+  width: 193px;
+}
+
+/* ------- mainPage ------- */
+.home-page {
+  margin: 0 auto;
   max-width: 1366px; /* TODO: DRY*/
 }
 
-/* ------- homePage ------- */
+/* ------- errorPage ------- */
 
 .error-page {
   margin: 0 auto;
   max-width: 1366px;
+}
+
+/* ------- users-not-found page ------- */
+
+
+/* ------- search-form ------- */
+
+.search-form {
+  display: flex;
+}
+#search-input {
+  padding-left: 44px;
+  width: 500px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
 }

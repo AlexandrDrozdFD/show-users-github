@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   min-width: 320px;
   background-color: #e5e5e5;
@@ -56,9 +62,109 @@ body {
 }
 
 /* ------- mainPage ------- */
-.home-page {
+.main-page {
   margin: 0 auto;
   max-width: 1366px; /* TODO: DRY*/
+  padding-left: 56px;
+  padding-right: 56px;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.main-page__user {
+  width: 281px;
+  margin-right: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.user-img {
+  margin-bottom: 28px;
+}
+.user-img__photo {
+  border-radius: 50%;
+  width: 100%;
+}
+.user-name {
+  margin-bottom: 12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+}
+.user-link {
+  margin-bottom: 25px;
+  display: block;
+}
+.user-tracking {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-followers,
+.user-following {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-followers__icon,
+.user-following__icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.main-page__repos {
+  width: 877px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+.repos-counter {
+  margin-bottom: 30px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%
+}
+
+.repos-container {
+
+}
+.repo {
+  margin-bottom: 24px;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+.repo-link {
+  margin-bottom: 16px;
+  text-decoration: none;
+  display: block;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #0064EB;
+}
+.repo-description {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 /* ------- errorPage ------- */
@@ -69,6 +175,29 @@ body {
 }
 
 /* ------- users-not-found page ------- */
+
+/* ------- empty ------- */
+
+.empty {
+  margin-top: 200px;
+  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.empty__icon {
+  margin-bottom: 24px;
+
+}
+.empty__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 140%;
+  color: #808080;
+}
 
 
 /* ------- search-form ------- */
@@ -83,4 +212,11 @@ body {
   border-radius: 6px;
   border: none;
   outline: none;
+}
+
+.loading {
+  margin: 0 auto;
+  max-width: 1366px; /* TODO: DRY*/
+  text-align: center;
+  margin-top: 150px;
 }

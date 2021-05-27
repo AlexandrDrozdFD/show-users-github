@@ -2,8 +2,8 @@ import React from 'react';
 import {useState} from 'react';
 import Navbar from './components/Navbar';
 import Main from './pages/Main';
-import NotFound from "./pages/User-not-found";
 import Home from './pages/Home';
+import Loading from "./components/Loading";
 import './App.css';
 
 
@@ -12,9 +12,7 @@ const App = () => {
   const [data, setData] = useState({});
   const [username, setUsername] = useState("");
   const [repositories, setRepositories] = useState([]);
-  const [error, setError] = useState(false);
-
-  console.log(error)
+  const [loading, setLoading] = useState(false);
 
   const onChangeHandle = (evt) => {
     setUsername(evt.target.value);
@@ -22,8 +20,7 @@ const App = () => {
 
   const submitHandler = async (evt) => {
     evt.preventDefault();
-    // setLoading(true);
-
+    setLoading(true);
 
     try {
       const responseForUser = await fetch(`https://api.github.com/users/${username}`);
@@ -31,33 +28,41 @@ const App = () => {
 
       const responseForRepos = await fetch(`https://api.github.com/users/${username}/repos`);
       const newRepos = await responseForRepos.json();
-      console.log(newRepos);
 
       setData(newUser);
       setRepositories(newRepos);
-
-
-      // setLoading(false);
-    } catch (err) {
-      console.log(err);
-      // setLoading(false);
-
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+      setLoading(false);
     }
+  }
+
+  if (loading) {
+    return (
+      <div className="App">
+        <Navbar
+          username={username}
+          submitHandler={submitHandler}
+          onChangeHandler={onChangeHandle}
+        />
+        <Loading/>
+      </div>
+    );
   }
 
   if (data.id) {
     return (
-      <>
+      <div className="App">
         <Navbar
           username={username}
           submitHandler={submitHandler}
           onChangeHandler={onChangeHandle}
         />
         <Main data={data} repositories={repositories}/>
-      </>
+      </div>
     );
   }
-
 
   return (
     <div className="App">
@@ -66,7 +71,7 @@ const App = () => {
         submitHandler={submitHandler}
         onChangeHandler={onChangeHandle}
       />
-      <Home />
+      <Home/>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import searchImg from "../search-img.svg";
 
-
 const Home = () => {
     return (
         <div className='home-page'>

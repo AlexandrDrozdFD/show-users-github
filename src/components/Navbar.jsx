@@ -1,20 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import SearchForm from './SearchForm';
 import logo from '../logo.svg'
 import searchImg from "../search-img.svg";
 
 
-const Navbar = () => {
+const Navbar = ({ username, submitHandler, onChangeHandler }) => {
+
   return (
     <nav className='navbar'>
       <div className='nav-center'>
-        <Link to='/' className='logo'>
+        <a href="/" className='logo'>
           <img src={logo} className='logo-img' alt='logo-home'></img>
-        </Link>
+        </a>
 
         <img src={searchImg} alt="search-img" className="search-img"/>
-        <SearchForm />
+        <SearchForm
+          username={username}
+          submitHandler={submitHandler}
+          onChangeHandler={onChangeHandler}
+        />
       </div>
     </nav>
   );

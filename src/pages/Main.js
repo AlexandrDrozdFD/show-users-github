@@ -20,7 +20,13 @@ const Main = ({data, repositories}) => {
             <div className="user-followers__icon">
               <img src={followers} alt="followers"/>
             </div>
-            <div className="user-followers__text">{data.followers} followers</div>
+            <div className="user-followers__text">
+              {data.followers < 1000
+                ?
+                data.followers
+                :
+                `${(data.followers / 1000).toFixed(1)}k`} followers
+            </div>
           </div>
           <div className="user-following">
             <div className="user-following__icon">

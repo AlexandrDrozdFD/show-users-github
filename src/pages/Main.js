@@ -20,13 +20,13 @@ const Main = ({data, repositories}) => {
             <div className="user-followers__icon">
               <img src={followers} alt="followers"/>
             </div>
-            <div>{data.followers} followers</div>
+            <div className="user-followers__text">{data.followers} followers</div>
           </div>
           <div className="user-following">
             <div className="user-following__icon">
               <img src={following} alt="following"/>
             </div>
-            <div>{data.following} following</div>
+            <div className="user-following__text">{data.following} following</div>
           </div>
         </div>
       </div>

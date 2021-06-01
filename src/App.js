@@ -3,7 +3,7 @@ import {useState} from 'react';
 import Navbar from './components/Navbar';
 import Main from './pages/Main';
 import Home from './pages/Home';
-import Loading from "./components/Loading";
+import Loading from './components/Loading';
 import './App.css';
 
 
@@ -18,8 +18,8 @@ const App = () => {
     setUsername(evt.target.value);
   };
 
-  const submitHandler = async (evt) => {
-    evt.preventDefault();
+  const submitHandler = async (e) => {
+    e.preventDefault();
     setLoading(true);
 
     try {

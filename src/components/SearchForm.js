@@ -5,7 +5,7 @@ const SearchForm = ({username, onChangeHandler, submitHandler}) => {
 
   return (
     <div className="search-form">
-      <form className="form" onSubmit={submitHandler}>
+      <form className="form"  onSubmit={submitHandler}>
         <input
           type="text"
           id="search-input"

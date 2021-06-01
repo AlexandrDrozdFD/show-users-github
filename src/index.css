@@ -15,6 +15,7 @@ body {
   background-color: #0064eb;
 }
 .nav-center {
+  padding-left: 5px;
   height: 72px;
   margin: 0 auto;
   max-width: 1366px;
@@ -237,4 +238,33 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 989px){
+  .main-page {
+    flex-wrap: wrap;
+  }
+  .main-page__repos {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 579px) {
+  #search-input {
+    width: 245px;
+  }
+  .user-name {
+    font-size: 20px;
+  }
+  .user-followers__text,
+  .user-following__text {
+    font-size: 13px;
+  }
+  .home-page {
+    padding-top: 60px;
+  }
+  .empty {
+    margin: 0 auto;
+    margin-top: 60px;
+  }
 }
